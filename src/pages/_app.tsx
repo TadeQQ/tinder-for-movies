@@ -1,6 +1,12 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import { AppProps } from 'next/app';
+import { MovieProvider } from '../components/Context/MovieContext';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function App({ Component, pageProps }: AppProps) {
+  return (
+    <MovieProvider>
+      <Component {...pageProps} />
+    </MovieProvider>
+  );
 }
+
+export default App;

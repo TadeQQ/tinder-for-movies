@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect, ReactNode } from 'react';
-
+import axios from 'axios';
 interface Movie {
   id: string;
   imageURL: string;
@@ -32,8 +32,7 @@ export const MovieProvider = ({ children }: Props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/api/recommendations');
-        const data = await response.json();
+        const { data, status } = await axios.get('/api/recommendations');
         setMovies(data);
         setLoading(false);
       } catch (error) {

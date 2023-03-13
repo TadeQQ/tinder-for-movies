@@ -1,17 +1,19 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { Movie } from '@/types/Movie';
 
-type Data = {
-  recommedations: Movie[];
-};
+interface Recommendation {
+  id: string;
+  imageURL: string;
+  title: string;
+  summary: string;
+  rating: number;
+}
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<{ recommendations: Recommendation[] }>
 ) {
   res.status(200).json({
-    recommedations: [
+    recommendations: [
       {
         id: '1and3011',
         imageURL:

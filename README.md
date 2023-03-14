@@ -1,4 +1,4 @@
-Tinder for movies
+## Tinder for movies
 Objective: create a single-page application for selecting a movie to watch using your phone.
 Functional description
 • Assume you have a backend that returns the following data structure on GET on

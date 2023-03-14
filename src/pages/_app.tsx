@@ -1,5 +1,5 @@
 import { AppProps } from 'next/app';
-import { MovieProvider } from '../components/Context/MovieContext';
+import { MovieProvider } from '../hooks/Context/MovieContext';
 
 function App({ Component, pageProps }: AppProps) {
   return (

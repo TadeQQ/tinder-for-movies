@@ -2,6 +2,7 @@
 Objective: create a single-page application for selecting a movie to watch using your phone.
 Functional description
 • Assume you have a backend that returns the following data structure on GET on
+```
 /recommendations
 [{
 id: “1and3011”,
@@ -19,6 +20,7 @@ title: “Star Wars: Episode VII - The Force Awakens”,
 summary: “Lorem ipsum….”,
 rating 8.2}
 ]
+```
 (feel free to add more items)
 
 • The application should show the movie titles, image, summary and rating.

@@ -1,15 +1,17 @@
-import { MovieList } from '@/components/MovieList/MovieList';
 import { MovieCard } from '@/components/Card';
-import Head from 'next/head';
+import { Box } from '@mui/system';
+import { Typography } from '@mui/material';
 export default function Home() {
   return (
-    <>
+    <Box
+      sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+    >
       <header>
-        <div>Tinder for movies</div>
+        <Typography variant="h4" component="h1">
+          Tinder for movies
+        </Typography>
       </header>
-      <div>
-        <MovieCard />
-      </div>
-    </>
+      <MovieCard />
+    </Box>
   );
 }

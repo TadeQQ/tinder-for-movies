@@ -7,6 +7,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { useRef } from 'react';
+type TouchEventHandler<T extends EventTarget> = (
+  event: TouchEvent & {
+    target: T;
+  }
+) => void;
 
 export const MovieList = () => {
   const [dragging, setDragging] = useState<boolean>(false);
@@ -26,12 +31,12 @@ export const MovieList = () => {
     setDragging(false);
     !lastMovie ? handleReject() : 'last movie';
   };
-  const handleTouchStart = (event: TouchEvent) => {
+  const handleTouchStart: React.TouchEventHandler<HTMLDivElement> = (event) => {
     const touch = event.touches[0];
     setPos({ x: touch.clientX, y: touch.clientY });
     setDragging(true);
   };
-  const handleTouchMove = (event: TouchEvent) => {
+  const handleTouchMove = () => {
     if (!dragging) {
       ('in air');
     }

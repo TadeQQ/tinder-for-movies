@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+
 interface Recommendation {
   id: string;
   imageURL: string;

@@ -12,8 +12,6 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<{ recommendations: Recommendation[] }>
 ) {
-  console.log('test');
-
   if (req.method === 'PUT') {
     res.status(200).json({ status: 'rejected' });
   } else {

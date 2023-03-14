@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect, ReactNode } from 'react';
 import axios from 'axios';
 
-interface Movie {
+export interface Movie {
   id: string;
   imageURL: string;
   title: string;
@@ -9,7 +9,7 @@ interface Movie {
   rating: number;
 }
 
-interface MovieContextType {
+export interface MovieContextType {
   movies: Movie[];
   loading: boolean;
   error: string;

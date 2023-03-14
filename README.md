@@ -1,4 +1,4 @@
-## Tinder for movies
+# Tinder for movies
 Objective: create a single-page application for selecting a movie to watch using your phone.
 Functional description
 • Assume you have a backend that returns the following data structure on GET on
@@ -20,24 +20,39 @@ summary: “Lorem ipsum….”,
 rating 8.2}
 ]
 (feel free to add more items)
+
 • The application should show the movie titles, image, summary and rating.
+
 • The user can accept or reject the suggestion. Accepting is done by a green button.
 Rejecting is done by red button or swipe.
+
 • The backend gets notified of a user's decision by a PUT call to
 /recommendations/<id>/accept or /recommendations/<id>/reject URL.
-Technical requirements
+  
+## Technical requirements
 • Needs to be structured like any other modern javascript application.
+  
 • Needs to look and work ok on the mobile phone (Android with Chrome) and normal
 browser (Chrome)
-• Framework:
+  
+Framework:
+  
 • React
+  
 • Jest, react-testing-library
+
 • React hooks
+  
 • TypeScript (is a huge plus)
+  
 • Push code do public github. Have github actions running tests and linter.
+  
 • Additional: have github actions building bundle files and deploying to github pages
-Additional questions
+  
+## Additional questions
+  
 • Usage of context provider to decouple data fetching from presentation layer.
+  
 • How to test the logic for data fetching.
 
 

@@ -15,14 +15,14 @@ export const MovieList = () => {
 
   const handleAccept = () => {
     const currentMovieId = movies[currentMovieIndex]?.id;
-    // acceptMovie(currentMovieId);
+    acceptMovie(currentMovieId);
     setCurrentMovieIndex((prevIndex) => prevIndex + 1);
     console.log('accepted');
   };
 
   const handleReject = () => {
     const currentMovieId = movies[currentMovieIndex]?.id;
-    // rejectMovie(currentMovieId);
+    rejectMovie(currentMovieId);
     setCurrentMovieIndex((prevIndex) => prevIndex + 1);
     console.log('rejected');
   };

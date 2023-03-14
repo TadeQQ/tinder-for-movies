@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect, ReactNode } from 'react';
 import axios from 'axios';
+
 interface Movie {
   id: string;
   imageURL: string;
@@ -13,8 +14,8 @@ interface MovieContextType {
   loading: boolean;
   error: string;
   status: string;
-  acceptMovie: (id: string) => Promise<void>;
-  rejectMovie: (id: string) => Promise<void>;
+  acceptMovie: (id: Movie['id']) => Promise<void>;
+  rejectMovie: (id: Movie['id']) => Promise<void>;
 }
 
 export const MovieContext = createContext<MovieContextType>({
@@ -22,8 +23,8 @@ export const MovieContext = createContext<MovieContextType>({
   loading: false,
   error: '',
   status: '',
-  acceptMovie: async (id: string) => {},
-  rejectMovie: async (id: string) => {},
+  acceptMovie: async (id) => {},
+  rejectMovie: async (id) => {},
 });
 
 interface Props {
@@ -35,9 +36,10 @@ export const MovieProvider = ({ children }: Props) => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>('');
   const [status, setStatus] = useState<string>('');
+
   const acceptMovie = async (id: string) => {
     try {
-      await axios.put(`/recommendations/${id}/accepted`);
+      await axios.put(`/api/recommendations/${id}/accepted`);
       setStatus('accepted');
     } catch (error) {
       setError('Failed to accept movie. Try again!');
@@ -48,7 +50,7 @@ export const MovieProvider = ({ children }: Props) => {
 
   const rejectMovie = async (id: string) => {
     try {
-      await axios.put(`/recommendations/${id}/rejected`);
+      await axios.put(`api/recommendations/${id}/rejected`);
       setStatus('rejected');
     } catch (error) {
       setError('Failed to reject movie. Try again!');

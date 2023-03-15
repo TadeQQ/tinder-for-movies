@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { recommendations } from '../../../../data/db';
+import { recommendations } from '../../../data/db';
 
 interface Recommendation {
   id: string;
